@@ -11,8 +11,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     try {
-        
-        res.status(200)
+        res.status(200).json('All good')
     } catch (err) {
         res.status(400).json(err);
     }
@@ -28,7 +27,7 @@ router.get('/signup', (req, res) => {
 
 router.post('/signup', (req, res) => {
     try {
-
+        res.status(200).json('allgood')
     } catch (err) {
         res.status(400).json(err);
     }
