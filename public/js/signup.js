@@ -1,11 +1,11 @@
 const signupForm = document.querySelector('.login-form');
+
+async function signup(event) {
+    event.preventDefault()
 const email = document.querySelector('#AddEmail').value.trim();
 const username = document.querySelector('#AddUsername').value.trim();
 const password = document.querySelector('#AddPassword').value.trim();
 const password2 = document.querySelector('#ConfirmPassword').value.trim();
-
-async function signup(event) {
-    event.preventDefault()
     if (password !== password2) {
         alert('passwords do not match');
         return;
@@ -13,7 +13,7 @@ async function signup(event) {
     if (email && password && username) {
         const response = await fetch('/api/login/signup', {
             method: 'POST',
-            body: JSON.stringify({ email, username, password }),
+            body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'aplication/json' },
         })
     }
@@ -23,3 +23,5 @@ async function signup(event) {
         alert('Failed to signup.');
     }
 }
+
+signupForm.addEventListener('submit', signup)

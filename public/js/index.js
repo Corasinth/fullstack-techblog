@@ -1,8 +1,7 @@
-const loginButton = document.querySelector('#login')
-const logoutButton = document.querySelector('#logout')
+const loginButton = document.querySelector('#login');
+const logoutButton = document.querySelector('#logout');
 
 function loginRedirect(event) {
-    event.preventDefault();
     document.location.replace('/api/login');
 }
 
@@ -11,6 +10,5 @@ function logoutRedirect(event) {
     //Deletes logged_in cookie
 }
 
-
 loginButton.addEventListener('click', loginRedirect)
-logoutButton.addEventListener('click', logoutRedirect)
+// logoutButton.addEventListener('click', logoutRedirect)
