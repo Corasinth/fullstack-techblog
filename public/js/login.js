@@ -3,7 +3,7 @@ const signUp = document.querySelector('#signup');
 
 async function login(event) {
     event.preventDefault()
-    const email = document.querySelector('#InputEmail1').value.trim();
+    const email = document.querySelector('#Username').value.trim();
     const password = document.querySelector('#InputPassword1').value.trim();
     if (email && password) {
         const response = await fetch('/api/login', {
