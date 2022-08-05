@@ -9,6 +9,15 @@ router.get('/', (req, res) => {
     }
 })
 
+router.post('/', (req, res) => {
+    try {
+        
+        res.status(200)
+    } catch (err) {
+        res.status(400).json(err);
+    }
+})
+
 router.get('/signup', (req, res) => {
     try {
         res.status(200).render('signup');
@@ -17,5 +26,12 @@ router.get('/signup', (req, res) => {
     }
 })
 
+router.post('/signup', (req, res) => {
+    try {
+
+    } catch (err) {
+        res.status(400).json(err);
+    }
+})
 
 module.exports = router;
