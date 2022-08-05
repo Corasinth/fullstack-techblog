@@ -13,12 +13,13 @@ async function signup(event) {
         const response = await fetch('/api/login/signup', {
             method: 'POST',
             body: JSON.stringify({username, password }),
-            headers: { 'Content-Type': 'aplication/json' },
+            headers: { 'Content-Type': 'application/json' },
         })
         if (response.ok) {
             console.log('sucessfully signed up')
             document.location.replace('/api/login');
         } else {
+            console.log(response)
             alert('Failed to signup.');
         }
     }
