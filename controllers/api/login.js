@@ -9,4 +9,13 @@ router.get('/', (req, res) => {
     }
 })
 
+router.get('/signup', (req, res) => {
+    try {
+        res.status(200).render('signup');
+    } catch (err) {
+        res.status(400).json(err);
+    }
+})
+
+
 module.exports = router;
